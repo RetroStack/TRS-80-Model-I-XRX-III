@@ -1,4 +1,4 @@
-# TRS-80 Model 1 XRX-II Mod
+# TRS-80 Model 1 XRX-III Mod
 
 This project faithfully reimplements the small brown mod board often seen attached to the keyboard of an TRS-80 Model 1. It corrects a software bug in earlier versions of the Level II ROMs, a bug later fixed in version 1.3. The design replicates the original mod's functionality using a 1-to-1 PCB design, including components, interfaces, and even traces.
 
