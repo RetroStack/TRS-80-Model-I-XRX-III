@@ -10,6 +10,8 @@ The entire project is available under the MIT license.
 
 ## Project Details
 
+![Overview](/Latest/TRS80_Model_I_XRX_III_Overview.png)
+
 ### Latest Files
 
 In the "Latest" folder, you'll find the most up-to-date design files, including:
