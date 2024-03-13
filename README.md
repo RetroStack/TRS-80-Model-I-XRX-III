@@ -25,6 +25,18 @@ This board has been implemented using KiCAD 7. The KiCAD project files are inclu
 ![Front](/Latest/TRS80_Model_I_XRX_III_3D_Front.png)
 ![Back](/Latest/TRS80_Model_I_XRX_III_3D_Back.png)
 
+### Schematic Details
+
+The mod monitors when the cassette-interface-in flip-flop on the main board resets. Upon this event, it performs two actions:
+1) it removes the clear from the 12-bit counter on the mod board, and
+2) it sets a flip-flop to prevent the signal from the OpAmps from reaching the mainboard flip-flop for the cassette data-in.
+
+The counter, utilizing a clock from the video circuitry, counts until 43.3ms have elapsed, after which it resets the mod flip-flop and reopens the cassette data-in port. This process helps to avoid noise being accidentally picked up by the software, which was listening too early (a bug in early system ROM versions).
+
+The board employs two NOR gates for the flip-flop and uses the other two NOR gates to gate the CASSIN signal and then to invert its value (since the gating also inverts the data, restoring the original state of CASSIN). 
+
+Another noteworthy aspect is the use of the two diodes and the pull-up resistor, configured to function like an AND gate. Opting for diodes and a resistor was likely a more cost-effective solution than adding another IC.
+
 ### RetroStack Libraries
 
 To work with this KiCAD project, you'll need the RetroStack libraries for KiCAD. Please [follow this link](https://www.github.com/RetroStack/KiCAD-Libraries) to access and install these libraries.
